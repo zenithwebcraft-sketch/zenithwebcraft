@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import portfolioDisuaferca from "@/assets/portfolio-disuaferca.jpg";
+import portfolioDisuafercaProductos from "@/assets/portfolio-disuaferca-productos.jpg";
+import portfolioDisuafercaImportacion from "@/assets/portfolio-disuaferca-importacion.jpg";
+import portfolioDisuafercaBlog from "@/assets/portfolio-disuaferca-blog.jpg";
 import portfolioTarot from "@/assets/portfolio-tarot.jpg";
 import portfolioLumen from "@/assets/portfolio-lumen.jpg";
 import portfolioRealty from "@/assets/portfolio-realty.jpg";
@@ -15,9 +18,9 @@ const projects = [
     title: "Disuaferca",
     images: [
       portfolioDisuaferca,
-      portfolioTarot, // Simulación - reemplazar con imágenes reales
-      portfolioLumen, // Simulación - reemplazar con imágenes reales
-      portfolioRealty // Simulación - reemplazar con imágenes reales
+      portfolioDisuafercaProductos,
+      portfolioDisuafercaImportacion,
+      portfolioDisuafercaBlog
     ],
     description: "A sleek and professional web presence for an international import/export business, focused on trust and efficiency."
   },
