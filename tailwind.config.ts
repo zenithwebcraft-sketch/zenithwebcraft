@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'heading': ['Manrope', 'sans-serif'],
+        'heading': ['Archivo Black', 'sans-serif'],
         'body': ['Inter', 'sans-serif'],
       },
       colors: {
