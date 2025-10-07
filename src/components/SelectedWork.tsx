@@ -10,7 +10,7 @@ const projects = [
   {
     title: "Disuaferca",
     image: portfolioDisuaferca,
-    description: "Modern e-commerce platform with elegant dark aesthetics and seamless product showcase."
+    description: "A sleek and professional web presence for an international import/export business, focused on trust and efficiency."
   },
   {
     title: "Carmen Cecilia Tarot",
