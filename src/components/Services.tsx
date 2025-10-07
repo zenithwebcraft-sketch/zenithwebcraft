@@ -58,7 +58,7 @@ const Services = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-secondary/30">
+    <section id="services" className="py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-6">
         <motion.h2 
           className="text-4xl md:text-6xl font-heading font-bold text-center mb-4"

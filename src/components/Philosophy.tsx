@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Philosophy = () => {
   return (
-    <section className="py-20 md:py-32 bg-secondary/30">
+    <section id="philosophy" className="py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-6 max-w-4xl">
         <motion.h2 
           className="text-4xl md:text-6xl font-heading font-bold mb-12"

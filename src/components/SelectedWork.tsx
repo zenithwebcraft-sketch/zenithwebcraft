@@ -33,7 +33,7 @@ const SelectedWork = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <section className="py-20 md:py-32">
+    <section id="selected-work" className="py-20 md:py-32">
       <div className="container mx-auto px-6">
         <motion.h2 
           className="text-4xl md:text-6xl font-heading font-bold mb-16"
