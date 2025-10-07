@@ -86,7 +86,7 @@ const Services = () => {
             >
               {plan.featured && (
                 <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-medium uppercase tracking-wide">
-                  Recomendado
+                  Recommended
                 </div>
               )}
               <CardHeader>
