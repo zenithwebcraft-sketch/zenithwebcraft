@@ -4,6 +4,10 @@ import portfolioDisuaferca from "@/assets/portfolio-disuaferca.jpg";
 import portfolioDisuafercaProductos from "@/assets/portfolio-disuaferca-productos.jpg";
 import portfolioDisuafercaImportacion from "@/assets/portfolio-disuaferca-importacion.jpg";
 import portfolioDisuafercaBlog from "@/assets/portfolio-disuaferca-blog.jpg";
+import portfolioPeopleFront from "@/assets/portfolio-people-front.jpg";
+import portfolioPeopleMagia from "@/assets/portfolio-people-magia.jpg";
+import portfolioPeopleCamino from "@/assets/portfolio-people-camino.jpg";
+import portfolioPeopleContacto from "@/assets/portfolio-people-contacto.jpg";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -25,13 +29,13 @@ const projects = [
   {
     title: "People Sin Limites",
     images: [
-      placeholderImage,
-      placeholderImage,
-      placeholderImage,
-      placeholderImage
+      portfolioPeopleFront,     // Página principal como thumbnail
+      portfolioPeopleMagia,     // Sección magia
+      portfolioPeopleCamino,    // Sección camino
+      portfolioPeopleContacto   // Sección contacto
     ],
     description: "A warm and serene digital space for a personal coaching and tarot brand, focusing on introspection and empowerment."
-  }
+  },
 ];
 
 const ImageGallery = ({ images, title }: { images: string[], title: string }) => {
