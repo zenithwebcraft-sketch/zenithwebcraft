@@ -1,61 +1,32 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import portfolioDisuaferca from "@/assets/portfolio-disuaferca.jpg";
-import portfolioDisuafercaProductos from "@/assets/portfolio-disuaferca-productos.jpg";
-import portfolioDisuafercaImportacion from "@/assets/portfolio-disuaferca-importacion.jpg";
-import portfolioDisuafercaBlog from "@/assets/portfolio-disuaferca-blog.jpg";
-import portfolioPeopleFront from "@/assets/portfolio-people-front.jpg";
-import portfolioPeopleMagia from "@/assets/portfolio-people-magia.jpg";
-import portfolioPeopleCamino from "@/assets/portfolio-people-camino.jpg";
-import portfolioPeopleContacto from "@/assets/portfolio-people-contacto.jpg";
-import portfolioTarot from "@/assets/portfolio-tarot.jpg";
-import portfolioLumen from "@/assets/portfolio-lumen.jpg";
-import portfolioRealty from "@/assets/portfolio-realty.jpg";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Para simular múltiples imágenes, vamos a duplicar las imágenes existentes
-// En un proyecto real, tendrías imágenes adicionales para cada proyecto
+// Placeholder image para debugging
+const placeholderImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='200' y='150' text-anchor='middle' font-family='Arial' font-size='16' fill='%23666'%3EPlaceholder Image%3C/text%3E%3C/svg%3E";
+
 const projects = [
   {
     title: "Disuaferca",
     images: [
-      portfolioDisuaferca,
-      portfolioDisuafercaProductos,
-      portfolioDisuafercaImportacion,
-      portfolioDisuafercaBlog
+      placeholderImage,
+      placeholderImage,
+      placeholderImage,
+      placeholderImage
     ],
     description: "A sleek and professional web presence for an international import/export business, focused on trust and efficiency."
   },
   {
     title: "People Sin Limites",
     images: [
-      portfolioPeopleFront,     // Primera imagen como thumbnail
-      portfolioPeopleMagia,
-      portfolioPeopleCamino,
-      portfolioPeopleContacto
+      placeholderImage,
+      placeholderImage,
+      placeholderImage,
+      placeholderImage
     ],
     description: "A warm and serene digital space for a personal coaching and tarot brand, focusing on introspection and empowerment."
-  },
-  {
-    title: "Proyecto Lumen",
-    images: [
-      portfolioLumen,
-      portfolioRealty,     // Simulación
-      portfolioDisuaferca, // Simulación
-      portfolioTarot       // Simulación
-    ],
-    description: "Architectural portfolio showcasing luminous modern design and interactive galleries."
-  },
-  {
-    title: "Serene Spaces Realty",
-    images: [
-      portfolioRealty,
-      portfolioLumen,      // Simulación
-      portfolioTarot,      // Simulación
-      portfolioDisuaferca  // Simulación
-    ],
-    description: "Premium real estate platform with property listings and virtual tour integration."
   }
 ];
 
@@ -137,18 +108,19 @@ const SelectedWork = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="group cursor-pointer relative overflow-hidden rounded-lg aspect-video"
+              className="group cursor-pointer relative overflow-hidden rounded-lg aspect-video bg-muted"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               onClick={() => setSelectedProject(project)}
             >
-              <img
-                src={project.images[0]}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              {/* Usamos placeholder en lugar de imágenes reales para debugging */}
+              <div className="w-full h-full bg-muted flex items-center justify-center">
+                <h3 className="text-2xl font-heading font-bold text-foreground">
+                  {project.title}
+                </h3>
+              </div>
               <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <h3 className="text-2xl font-heading font-bold text-foreground">
                   {project.title}
