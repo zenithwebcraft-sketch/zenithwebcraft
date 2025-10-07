@@ -9,11 +9,12 @@ import portfolioPeopleMagia from "@/assets/portfolio-people-magia.jpg";
 import portfolioPeopleCamino from "@/assets/portfolio-people-camino.jpg";
 import portfolioPeopleContacto from "@/assets/portfolio-people-contacto.jpg";
 import portfolioLumenFront from "@/assets/portfolio-lumen-front.jpg";
+import portfolioLumenContacto from "@/assets/portfolio-lumen-contacto.jpg";
+import portfolioLumenFuerza from "@/assets/portfolio-lumen-fuerza.jpg";
+import portfolioLumenVitalidad from "@/assets/portfolio-lumen-vitalidad.jpg";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-// Placeholder image para debugging
 const placeholderImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='200' y='150' text-anchor='middle' font-family='Arial' font-size='16' fill='%23666'%3EPlaceholder Image%3C/text%3E%3C/svg%3E";
 
 const projects = [
@@ -41,11 +42,11 @@ const projects = [
     title: "Proyecto Lumen",
     images: [
       portfolioLumenFront,      // Página principal como thumbnail
-      placeholderImage,         // Placeholder para imagen adicional
-      placeholderImage,         // Placeholder para imagen adicional
-      placeholderImage          // Placeholder para imagen adicional
+      portfolioLumenFuerza,     // Sección fuerza
+      portfolioLumenVitalidad,  // Sección vitalidad
+      portfolioLumenContacto    // Sección contacto
     ],
-    description: "Architectural portfolio showcasing luminous modern design and interactive galleries."
+    description: "A powerful and motivational platform for a men's transformation journey, centered on community, health, and self-discovery."
   },
 ];
 
