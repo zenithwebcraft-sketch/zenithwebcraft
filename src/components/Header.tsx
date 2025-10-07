@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logoZenithWebCraft from "@/assets/logo-zenith-web-craft.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,9 +21,13 @@ const Header = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-2xl font-heading font-extrabold tracking-wider hover:text-primary transition-colors"
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
-            ZenithWebCraft
+            <img
+              src={logoZenithWebCraft}
+              alt="ZenithWebCraft Logo"
+              className="h-10 w-auto"
+            />
           </button>
 
           {/* Desktop Navigation */}
