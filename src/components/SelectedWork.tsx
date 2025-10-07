@@ -4,10 +4,13 @@ import portfolioDisuaferca from "@/assets/portfolio-disuaferca.jpg";
 import portfolioDisuafercaProductos from "@/assets/portfolio-disuaferca-productos.jpg";
 import portfolioDisuafercaImportacion from "@/assets/portfolio-disuaferca-importacion.jpg";
 import portfolioDisuafercaBlog from "@/assets/portfolio-disuaferca-blog.jpg";
+import portfolioPeopleFront from "@/assets/portfolio-people-front.jpg";
+import portfolioPeopleMagia from "@/assets/portfolio-people-magia.jpg";
+import portfolioPeopleCamino from "@/assets/portfolio-people-camino.jpg";
+import portfolioPeopleContacto from "@/assets/portfolio-people-contacto.jpg";
 import portfolioTarot from "@/assets/portfolio-tarot.jpg";
 import portfolioLumen from "@/assets/portfolio-lumen.jpg";
 import portfolioRealty from "@/assets/portfolio-realty.jpg";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -25,14 +28,14 @@ const projects = [
     description: "A sleek and professional web presence for an international import/export business, focused on trust and efficiency."
   },
   {
-    title: "Carmen Cecilia Tarot",
+    title: "People Sin Limites",
     images: [
-      portfolioTarot,
-      portfolioDisuaferca, // Simulación
-      portfolioRealty,     // Simulación
-      portfolioLumen       // Simulación
+      portfolioPeopleFront,     // Primera imagen como thumbnail
+      portfolioPeopleMagia,
+      portfolioPeopleCamino,
+      portfolioPeopleContacto
     ],
-    description: "Mystical and spiritual website with custom booking system and content management."
+    description: "A warm and serene digital space for a personal coaching and tarot brand, focusing on introspection and empowerment."
   },
   {
     title: "Proyecto Lumen",
