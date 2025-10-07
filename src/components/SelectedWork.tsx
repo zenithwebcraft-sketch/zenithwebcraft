@@ -8,6 +8,7 @@ import portfolioPeopleFront from "@/assets/portfolio-people-front.jpg";
 import portfolioPeopleMagia from "@/assets/portfolio-people-magia.jpg";
 import portfolioPeopleCamino from "@/assets/portfolio-people-camino.jpg";
 import portfolioPeopleContacto from "@/assets/portfolio-people-contacto.jpg";
+import portfolioLumenFront from "@/assets/portfolio-lumen-front.jpg";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -35,6 +36,16 @@ const projects = [
       portfolioPeopleContacto   // Sección contacto
     ],
     description: "A warm and serene digital space for a personal coaching and tarot brand, focusing on introspection and empowerment."
+  },
+  {
+    title: "Proyecto Lumen",
+    images: [
+      portfolioLumenFront,      // Página principal como thumbnail
+      placeholderImage,         // Placeholder para imagen adicional
+      placeholderImage,         // Placeholder para imagen adicional
+      placeholderImage          // Placeholder para imagen adicional
+    ],
+    description: "Architectural portfolio showcasing luminous modern design and interactive galleries."
   },
 ];
 
