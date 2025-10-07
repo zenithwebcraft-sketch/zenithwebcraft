@@ -27,7 +27,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-9xl md:text-[12rem] lg:text-[16rem] font-heading font-extrabold tracking-wider mb-6 text-foreground leading-none">
+          <h1 className="text-7xl md:text-[10.5rem] lg:text-[12rem] font-heading font-extrabold tracking-wider mb-6 text-foreground">
             CRAFTING DIGITAL<br />SERENITY.
           </h1>
           
