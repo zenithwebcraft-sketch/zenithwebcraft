@@ -16,7 +16,8 @@ const projects = [
     images: [
       portfolioDisuaferca,
       portfolioTarot, // Simulación - reemplazar con imágenes reales
-      portfolioLumen  // Simulación - reemplazar con imágenes reales
+      portfolioLumen, // Simulación - reemplazar con imágenes reales
+      portfolioRealty // Simulación - reemplazar con imágenes reales
     ],
     description: "A sleek and professional web presence for an international import/export business, focused on trust and efficiency."
   },
@@ -25,7 +26,8 @@ const projects = [
     images: [
       portfolioTarot,
       portfolioDisuaferca, // Simulación
-      portfolioRealty      // Simulación
+      portfolioRealty,     // Simulación
+      portfolioLumen       // Simulación
     ],
     description: "Mystical and spiritual website with custom booking system and content management."
   },
@@ -34,7 +36,8 @@ const projects = [
     images: [
       portfolioLumen,
       portfolioRealty,     // Simulación
-      portfolioDisuaferca  // Simulación
+      portfolioDisuaferca, // Simulación
+      portfolioTarot       // Simulación
     ],
     description: "Architectural portfolio showcasing luminous modern design and interactive galleries."
   },
@@ -43,7 +46,8 @@ const projects = [
     images: [
       portfolioRealty,
       portfolioLumen,      // Simulación
-      portfolioTarot       // Simulación
+      portfolioTarot,      // Simulación
+      portfolioDisuaferca  // Simulación
     ],
     description: "Premium real estate platform with property listings and virtual tour integration."
   }
