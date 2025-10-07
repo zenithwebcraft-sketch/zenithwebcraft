@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import portfolioDisuaferca from "@/assets/portfolio-disuaferca.jpg";
+import portfolioDisuafercaProductos from "@/assets/portfolio-disuaferca-productos.jpg";
+import portfolioDisuafercaImportacion from "@/assets/portfolio-disuaferca-importacion.jpg";
+import portfolioDisuafercaBlog from "@/assets/portfolio-disuaferca-blog.jpg";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -11,10 +15,10 @@ const projects = [
   {
     title: "Disuaferca",
     images: [
-      placeholderImage,
-      placeholderImage,
-      placeholderImage,
-      placeholderImage
+      portfolioDisuaferca,
+      portfolioDisuafercaProductos,
+      portfolioDisuafercaImportacion,
+      portfolioDisuafercaBlog
     ],
     description: "A sleek and professional web presence for an international import/export business, focused on trust and efficiency."
   },
@@ -108,19 +112,18 @@ const SelectedWork = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="group cursor-pointer relative overflow-hidden rounded-lg aspect-video bg-muted"
+              className="group cursor-pointer relative overflow-hidden rounded-lg aspect-video"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               onClick={() => setSelectedProject(project)}
             >
-              {/* Usamos placeholder en lugar de imágenes reales para debugging */}
-              <div className="w-full h-full bg-muted flex items-center justify-center">
-                <h3 className="text-2xl font-heading font-bold text-foreground">
-                  {project.title}
-                </h3>
-              </div>
+              <img
+                src={project.images[0]}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
               <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <h3 className="text-2xl font-heading font-bold text-foreground">
                   {project.title}

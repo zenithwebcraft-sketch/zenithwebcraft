@@ -19,8 +19,8 @@ const Index = () => {
       {/* <Footer /> */}
       <div className="py-20 text-center">
         <h2 className="text-4xl font-heading font-bold text-foreground">Sitio funcionando correctamente</h2>
-        <p className="text-muted-foreground mt-4">SelectedWork ahora usa imágenes placeholder ✅</p>
-        <p className="text-sm text-muted-foreground mt-2">Si funciona, podemos restaurar las imágenes reales gradualmente.</p>
+        <p className="text-muted-foreground mt-4">SelectedWork restaurado con imágenes reales de Disuaferca ✅</p>
+        <p className="text-sm text-muted-foreground mt-2">People Sin Limites usa imágenes placeholder temporalmente.</p>
       </div>
     </div>
   );
