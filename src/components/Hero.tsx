@@ -17,22 +17,23 @@ const Hero = () => {
           alt="Abstract elegant background" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-background/50 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading font-extrabold tracking-wider mb-6 text-foreground leading-none">
-            CRAFTING DIGITAL<br />SERENITY.
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-extrabold tracking-wider mb-6 sm:mb-8 text-foreground leading-tight sm:leading-none">
+            CRAFTING<br />DIGITAL<br className="sm:hidden" />
+            <span className="hidden sm:inline"> </span>SERENITY.
           </h1>
           
           <motion.p 
-            className="text-lg md:text-xl text-foreground/80 font-body mb-8 max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-foreground/80 font-body mb-8 sm:mb-10 max-w-2xl mx-auto px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -48,7 +49,7 @@ const Hero = () => {
             <Button 
               onClick={scrollToContact}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 text-base md:text-lg px-8 py-6 uppercase tracking-wide font-medium"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-7 uppercase tracking-wide font-medium shadow-lg hover:shadow-xl"
             >
               Let's Talk
             </Button>
