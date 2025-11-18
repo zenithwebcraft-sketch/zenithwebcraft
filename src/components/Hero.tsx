@@ -21,19 +21,19 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center py-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center py-12 sm:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-extrabold tracking-wider mb-6 sm:mb-8 text-foreground leading-tight sm:leading-none">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-extrabold tracking-wider mb-8 sm:mb-10 text-foreground leading-tight sm:leading-none">
             CRAFTING<br />DIGITAL<br className="sm:hidden" />
             <span className="hidden sm:inline"> </span>SERENITY.
           </h1>
           
           <motion.p 
-            className="text-base sm:text-lg md:text-xl text-foreground/80 font-body mb-8 sm:mb-10 max-w-2xl mx-auto px-4"
+            className="text-lg sm:text-xl md:text-2xl text-foreground/80 font-body mb-10 sm:mb-12 max-w-2xl mx-auto px-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -49,7 +49,7 @@ const Hero = () => {
             <Button 
               onClick={scrollToContact}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-7 uppercase tracking-wide font-medium shadow-lg hover:shadow-xl"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 text-lg sm:text-xl px-10 sm:px-12 py-7 sm:py-8 uppercase tracking-wide font-medium shadow-lg hover:shadow-xl"
             >
               Let's Talk
             </Button>
