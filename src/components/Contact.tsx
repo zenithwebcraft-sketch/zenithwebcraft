@@ -6,6 +6,7 @@ import { Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
+import { trackFormSubmission } from '@/analytics';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -57,6 +58,9 @@ const Contact = () => {
       });
 
       if (response.ok) {
+        // Track successful form submission
+        trackFormSubmission('Contact Form');
+        
         toast({
           title: t('contact.form.success'),
           description: t('contact.form.successMessage')

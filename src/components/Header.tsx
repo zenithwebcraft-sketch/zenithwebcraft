@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
+import { trackNavigation } from '@/analytics';
 import logoZenithWebCraft from "@/assets/logo-zenith-web-craft.png";
 
 const Header = () => {
@@ -9,6 +10,7 @@ const Header = () => {
   const { t } = useTranslation();
 
   const scrollToSection = (sectionId: string) => {
+    trackNavigation(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

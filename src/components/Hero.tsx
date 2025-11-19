@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from 'react-i18next';
+import { trackCTAClick } from '@/analytics';
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const { t } = useTranslation();
   
   const scrollToContact = () => {
+    trackCTAClick('Hero', t('hero.cta'));
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   };

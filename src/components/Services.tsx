@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles } from "lucide-react";
 import { useTranslation } from 'react-i18next';
+import { trackCTAClick } from '@/analytics';
 
 const Services = () => {
   const { t } = useTranslation();
@@ -82,6 +83,7 @@ const Services = () => {
   ];
 
   const scrollToContact = () => {
+    trackCTAClick('Services', 'Get Started / Start Building / Let\'s Discuss');
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   };
