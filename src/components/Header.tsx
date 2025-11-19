@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import logoZenithWebCraft from "@/assets/logo-zenith-web-craft.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -36,31 +38,31 @@ const Header = () => {
               onClick={() => scrollToSection('hero')}
               className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide"
             >
-              Home
+              {t('nav.home')}
             </button>
             <button
               onClick={() => scrollToSection('services')}
               className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide"
             >
-              Services
+              {t('nav.services')}
             </button>
             <button
               onClick={() => scrollToSection('selected-work')}
               className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide"
             >
-              Portfolio
+              {t('nav.portfolio')}
             </button>
             <button
               onClick={() => scrollToSection('philosophy')}
               className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide"
             >
-              About
+              {t('nav.about')}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide"
             >
-              Contact
+              {t('nav.contact')}
             </button>
           </nav>
 
@@ -70,7 +72,7 @@ const Header = () => {
               onClick={() => scrollToSection('contact')}
               className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-medium uppercase tracking-wide"
             >
-              Let's Talk
+              {t('hero.cta')}
             </Button>
           </div>
 
@@ -91,37 +93,37 @@ const Header = () => {
                 onClick={() => scrollToSection('hero')}
                 className="text-left text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide py-2"
               >
-                Home
+                {t('nav.home')}
               </button>
               <button
                 onClick={() => scrollToSection('services')}
                 className="text-left text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide py-2"
               >
-                Services
+                {t('nav.services')}
               </button>
               <button
                 onClick={() => scrollToSection('selected-work')}
                 className="text-left text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide py-2"
               >
-                Portfolio
+                {t('nav.portfolio')}
               </button>
               <button
                 onClick={() => scrollToSection('philosophy')}
                 className="text-left text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide py-2"
               >
-                About
+                {t('nav.about')}
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-left text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide py-2"
               >
-                Contact
+                {t('nav.contact')}
               </button>
               <Button
                 onClick={() => scrollToSection('contact')}
                 className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-medium uppercase tracking-wide w-full"
               >
-                Let's Talk
+                {t('hero.cta')}
               </Button>
             </nav>
           </div>

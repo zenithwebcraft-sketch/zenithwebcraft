@@ -1,13 +1,16 @@
 import { Linkedin, Github, Mail } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer className="py-12 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-xl font-heading font-bold mb-2">ZenithWebCraft</h3>
-            <p className="text-sm text-muted-foreground">Crafting Digital Serenity</p>
+            <p className="text-sm text-muted-foreground">{t('footer.tagline')}</p>
           </div>
           
           <div className="flex items-center gap-6">
@@ -39,7 +42,7 @@ const Footer = () => {
           </div>
           
           <p className="text-sm text-muted-foreground">
-            © 2025 ZenithWebCraft. All rights reserved.
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

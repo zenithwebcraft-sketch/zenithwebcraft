@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import portfolioDisuaferca from "@/assets/portfolio-disuaferca.jpg";
 import portfolioDisuafercaProductos from "@/assets/portfolio-disuaferca-productos.jpg";
 import portfolioDisuafercaImportacion from "@/assets/portfolio-disuaferca-importacion.jpg";
@@ -15,40 +16,6 @@ import portfolioLumenVitalidad from "@/assets/portfolio-lumen-vitalidad.jpg";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-const placeholderImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='200' y='150' text-anchor='middle' font-family='Arial' font-size='16' fill='%23666'%3EPlaceholder Image%3C/text%3E%3C/svg%3E";
-
-const projects = [
-  {
-    title: "Disuaferca",
-    images: [
-      portfolioDisuaferca,
-      portfolioDisuafercaProductos,
-      portfolioDisuafercaImportacion,
-      portfolioDisuafercaBlog
-    ],
-    description: "A sleek and professional web presence for an international import/export business, focused on trust and efficiency."
-  },
-  {
-    title: "People Sin Limites",
-    images: [
-      portfolioPeopleFront,     // Página principal como thumbnail
-      portfolioPeopleMagia,     // Sección magia
-      portfolioPeopleCamino,    // Sección camino
-      portfolioPeopleContacto   // Sección contacto
-    ],
-    description: "A warm and serene digital space for a personal coaching and tarot brand, focusing on introspection and empowerment."
-  },
-  {
-    title: "Proyecto Lumen",
-    images: [
-      portfolioLumenFront,      // Página principal como thumbnail
-      portfolioLumenFuerza,     // Sección fuerza
-      portfolioLumenVitalidad,  // Sección vitalidad
-      portfolioLumenContacto    // Sección contacto
-    ],
-    description: "A powerful and motivational platform for a men's transformation journey, centered on community, health, and self-discovery."
-  },
-];
 
 const ImageGallery = ({ images, title }: { images: string[], title: string }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -109,7 +76,45 @@ const ImageGallery = ({ images, title }: { images: string[], title: string }) =>
 };
 
 const SelectedWork = () => {
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const { t } = useTranslation();
+  const [selectedProject, setSelectedProject] = useState<{
+    title: string;
+    images: string[];
+    description: string;
+  } | null>(null);
+
+  const projects = [
+    {
+      title: t('work.disuaferca.title'),
+      images: [
+        portfolioDisuaferca,
+        portfolioDisuafercaProductos,
+        portfolioDisuafercaImportacion,
+        portfolioDisuafercaBlog
+      ],
+      description: t('work.disuaferca.description')
+    },
+    {
+      title: t('work.people.title'),
+      images: [
+        portfolioPeopleFront,
+        portfolioPeopleMagia,
+        portfolioPeopleCamino,
+        portfolioPeopleContacto
+      ],
+      description: t('work.people.description')
+    },
+    {
+      title: t('work.lumen.title'),
+      images: [
+        portfolioLumenFront,
+        portfolioLumenFuerza,
+        portfolioLumenVitalidad,
+        portfolioLumenContacto
+      ],
+      description: t('work.lumen.description')
+    },
+  ];
 
   return (
     <section id="selected-work" className="py-20 md:py-32">
@@ -121,7 +126,7 @@ const SelectedWork = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          SELECTED WORK.
+          {t('work.title')}
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

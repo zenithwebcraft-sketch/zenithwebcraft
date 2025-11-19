@@ -2,56 +2,59 @@ import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles } from "lucide-react";
-
-const pricingPlans = [
-  {
-    name: "Express Launch",
-    price: "$149",
-    description: "Perfect for entrepreneurs and personal projects needing an elegant and effective digital business card.",
-    features: [
-      "Single-Page Website (One-Pager): A fluid and direct design with up to 3 sections (e.g., Home, Services, Contact).",
-      "Fully Responsive & Modern Design: A website that looks amazing on any device.",
-      "Contact Form Integration: So you never miss a business opportunity.",
-      "Social Media Links: Direct links to your profiles.",
-      "1-Week Launch: Once all content is provided.",
-      "1 Week of Post-Launch Support: Includes minor adjustments.",
-      "Optional Monthly Maintenance: $9.99/mo - Includes high-speed hosting, SSL security certificate, and one (1) minor change request per month."
-    ],
-    cta: "Get Started"
-  },
-  {
-    name: "Digital Boost",
-    price: "$300",
-    description: "The ideal solution for growing businesses that need a complete website to showcase their brand, services, and attract their target audience.",
-    features: [
-      "Everything in the Express Launch plan, plus:",
-      "Complete Website: Up to 5 pages/sections (e.g., Home, About, Services, Blog, Contact).",
-      "Integrated Blog Section: So you can share news and valuable content (includes setup of 3 initial posts).",
-      "Basic SEO Optimization: We help Google understand your business from day one.",
-      "BONUS: 1 Month of Unlimited Adjustments: Full support during the first 30 days to make your website perfect.",
-      "Optional Monthly Maintenance: $14.99/mo - Includes high-speed hosting, SSL security certificate, and up to three (3) minor change requests per month."
-    ],
-    cta: "Start Building",
-    featured: true
-  },
-  {
-    name: "Advanced Portal",
-    price: "Starting at $750",
-    description: "For established businesses or projects that require custom functionality, such as exclusive content for members or specific integrations.",
-    features: [
-      "Everything in the Digital Boost plan, plus:",
-      "User Registration & Login System: Allow your visitors to create accounts and access private content.",
-      "Members-Only Content Area: Website sections visible only to registered users.",
-      "Extended Website: Up to 10 pages/sections included.",
-      "Robust Backend Technology: We use leading solutions like Firebase or Supabase for user management, ensuring security and scalability.",
-      "Priority Support: Preferential attention throughout the development and post-launch phases.",
-      "Optional Monthly Maintenance: $29.99/mo - Includes high-speed hosting, SSL security certificate, and up to five (5) minor change requests per month."
-    ],
-    cta: "Let's Discuss"
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation();
+  
+  const pricingPlans = [
+    {
+      name: t('services.express.name'),
+      price: t('services.express.price'),
+      description: t('services.express.description'),
+      features: [
+        t('services.express.feature1'),
+        t('services.express.feature2'),
+        t('services.express.feature3'),
+        t('services.express.feature4'),
+        t('services.express.feature5'),
+        t('services.express.feature6'),
+        t('services.express.feature7')
+      ],
+      cta: t('services.express.cta')
+    },
+    {
+      name: t('services.boost.name'),
+      price: t('services.boost.price'),
+      description: t('services.boost.description'),
+      features: [
+        t('services.boost.feature1'),
+        t('services.boost.feature2'),
+        t('services.boost.feature3'),
+        t('services.boost.feature4'),
+        t('services.boost.feature5'),
+        t('services.boost.feature6')
+      ],
+      cta: t('services.boost.cta'),
+      featured: true
+    },
+    {
+      name: t('services.portal.name'),
+      price: t('services.portal.price'),
+      description: t('services.portal.description'),
+      features: [
+        t('services.portal.feature1'),
+        t('services.portal.feature2'),
+        t('services.portal.feature3'),
+        t('services.portal.feature4'),
+        t('services.portal.feature5'),
+        t('services.portal.feature6'),
+        t('services.portal.feature7')
+      ],
+      cta: t('services.portal.cta')
+    }
+  ];
+
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
@@ -67,7 +70,7 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          SOLUTIONS FOR YOUR VISION.
+          {t('services.title')}
         </motion.h2>
 
         <motion.div 
@@ -86,7 +89,7 @@ const Services = () => {
             >
               {plan.featured && (
                 <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-medium uppercase tracking-wide">
-                  Recommended
+                  {t('services.recommended')}
                 </div>
               )}
               <CardHeader>
@@ -127,7 +130,7 @@ const Services = () => {
         >
           <p className="text-foreground/80 font-body flex items-center justify-center gap-2">
             <Sparkles className="h-5 w-5 text-primary" />
-            <span>Special Offer: Sign up for any annual maintenance plan and get your domain name free for the first year.</span>
+            <span>{t('services.specialOffer')}</span>
           </p>
         </motion.div>
       </div>

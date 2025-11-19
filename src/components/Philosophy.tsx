@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 
 const Philosophy = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="philosophy" className="py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-6 max-w-4xl">
@@ -11,7 +14,7 @@ const Philosophy = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          THE CRAFT.
+          {t('philosophy.title')}
         </motion.h2>
 
         <motion.p 
@@ -21,10 +24,7 @@ const Philosophy = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          I believe the best digital experiences are born from a place of calm. In a world of digital noise, 
-          my approach is a quiet one: to build with intention, to value clarity over complexity, and to craft 
-          websites that feel less like technology and more like a serene, thoughtful space. This is the craft 
-          of digital serenity.
+          {t('philosophy.text')}
         </motion.p>
       </div>
     </section>
