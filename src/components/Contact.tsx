@@ -112,9 +112,9 @@ const Contact = () => {
           >
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-heading font-bold mb-4">Get in Touch</h3>
+                <h3 className="text-2xl font-heading font-bold mb-4">{t('contact.heading')}</h3>
                 <p className="text-foreground/70 mb-6">
-                  Ready to bring your vision to life? Send me a message and I'll get back to you within 24 hours.
+                  {t('contact.description')}
                 </p>
               </div>
               
@@ -126,10 +126,10 @@ const Contact = () => {
               </div>
 
               <div className="pt-6 border-t border-border">
-                <p className="text-sm text-muted-foreground">
-                  <strong>Response Time:</strong> Within 24 hours<br/>
-                  <strong>Location:</strong> Orlando, FL<br/>
-                  <strong>Availability:</strong> Monday - Saturday
+                <p className="text-sm text-muted-foreground space-y-1">
+                  <span className="block"><strong>{t('contact.responseTime')}</strong> {t('contact.responseTimeValue')}</span>
+                  <span className="block"><strong>{t('contact.location')}</strong> {t('contact.locationValue')}</span>
+                  <span className="block"><strong>{t('contact.availability')}</strong> {t('contact.availabilityValue')}</span>
                 </p>
               </div>
             </div>
