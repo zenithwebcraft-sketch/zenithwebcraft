@@ -13,13 +13,22 @@ const Services = () => {
       price: t('services.express.price'),
       description: t('services.express.description'),
       features: [
-        t('services.express.feature1'),
-        t('services.express.feature2'),
-        t('services.express.feature3'),
-        t('services.express.feature4'),
-        t('services.express.feature5'),
-        t('services.express.feature6'),
-        t('services.express.feature7')
+        "Single-page website (up to 3 sections)",
+        "Fully responsive design",
+        "Contact form integration",
+        "Social media links",
+        "1-week launch time",
+        "1 week post-launch support",
+        "Optional maintenance: $9.99/mo"
+      ],
+      featuresEs: [
+        "Sitio web de una página (hasta 3 secciones)",
+        "Diseño totalmente responsive",
+        "Integración de formulario de contacto",
+        "Enlaces a redes sociales",
+        "Lanzamiento en 1 semana",
+        "1 semana de soporte post-lanzamiento",
+        "Mantenimiento opcional: $9.99/mes"
       ],
       cta: t('services.express.cta')
     },
@@ -28,12 +37,20 @@ const Services = () => {
       price: t('services.boost.price'),
       description: t('services.boost.description'),
       features: [
-        t('services.boost.feature1'),
-        t('services.boost.feature2'),
-        t('services.boost.feature3'),
-        t('services.boost.feature4'),
-        t('services.boost.feature5'),
-        t('services.boost.feature6')
+        "Everything in Express Launch",
+        "Complete website (up to 5 pages)",
+        "Integrated blog section (3 posts included)",
+        "Basic SEO optimization",
+        "BONUS: 1 month unlimited adjustments",
+        "Optional maintenance: $14.99/mo"
+      ],
+      featuresEs: [
+        "Todo lo del Lanzamiento Express",
+        "Sitio web completo (hasta 5 páginas)",
+        "Sección de blog integrada (3 posts incluidos)",
+        "Optimización SEO básica",
+        "BONO: 1 mes de ajustes ilimitados",
+        "Mantenimiento opcional: $14.99/mes"
       ],
       cta: t('services.boost.cta'),
       featured: true
@@ -43,13 +60,22 @@ const Services = () => {
       price: t('services.portal.price'),
       description: t('services.portal.description'),
       features: [
-        t('services.portal.feature1'),
-        t('services.portal.feature2'),
-        t('services.portal.feature3'),
-        t('services.portal.feature4'),
-        t('services.portal.feature5'),
-        t('services.portal.feature6'),
-        t('services.portal.feature7')
+        "Everything in Digital Boost",
+        "User registration & login system",
+        "Members-only content area",
+        "Extended website (up to 10 pages)",
+        "Robust backend (Firebase/Supabase)",
+        "Priority support",
+        "Optional maintenance: $29.99/mo"
+      ],
+      featuresEs: [
+        "Todo lo del Impulso Digital",
+        "Sistema de registro e inicio de sesión",
+        "Área de contenido solo para miembros",
+        "Sitio web extendido (hasta 10 páginas)",
+        "Backend robusto (Firebase/Supabase)",
+        "Soporte prioritario",
+        "Mantenimiento opcional: $29.99/mes"
       ],
       cta: t('services.portal.cta')
     }
@@ -80,45 +106,50 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {pricingPlans.map((plan, index) => (
-            <Card 
-              key={index} 
-              className={`bg-card border-border transition-all duration-300 hover:border-primary/50 ${
-                plan.featured ? 'ring-2 ring-primary shadow-lg' : ''
-              }`}
-            >
-              {plan.featured && (
-                <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-medium uppercase tracking-wide">
-                  {t('services.recommended')}
-                </div>
-              )}
-              <CardHeader>
-                <CardTitle className="text-2xl font-heading">{plan.name}</CardTitle>
-                <CardDescription className="text-muted-foreground">{plan.description}</CardDescription>
-                <div className="mt-4">
-                  <span className="text-4xl font-heading font-bold text-foreground">{plan.price}</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-card-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button 
-                  onClick={scrollToContact}
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 uppercase tracking-wide"
-                >
-                  {plan.cta}
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+          {pricingPlans.map((plan, index) => {
+            const isSpanish = t('services.title') === 'SOLUCIONES PARA TU VISIÓN.';
+            const features = isSpanish ? plan.featuresEs : plan.features;
+            
+            return (
+              <Card 
+                key={index} 
+                className={`bg-card border-border transition-all duration-300 hover:border-primary/50 ${
+                  plan.featured ? 'ring-2 ring-primary shadow-lg' : ''
+                }`}
+              >
+                {plan.featured && (
+                  <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-medium uppercase tracking-wide">
+                    {t('services.recommended')}
+                  </div>
+                )}
+                <CardHeader>
+                  <CardTitle className="text-2xl font-heading">{plan.name}</CardTitle>
+                  <CardDescription className="text-muted-foreground min-h-[60px]">{plan.description}</CardDescription>
+                  <div className="mt-4 p-4 bg-primary/10 rounded-lg">
+                    <span className="text-5xl font-heading font-bold text-primary">{plan.price}</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start gap-3">
+                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-card-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <Button 
+                    onClick={scrollToContact}
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 uppercase tracking-wide"
+                  >
+                    {plan.cta}
+                  </Button>
+                </CardFooter>
+              </Card>
+            );
+          })}
         </motion.div>
 
         <motion.div 
@@ -128,7 +159,7 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-foreground/80 font-body flex items-center justify-center gap-2">
+          <p className="text-foreground/80 font-body flex items-center justify-center gap-2 flex-wrap">
             <Sparkles className="h-5 w-5 text-primary" />
             <span>{t('services.specialOffer')}</span>
           </p>

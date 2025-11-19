@@ -129,7 +129,7 @@ const SelectedWork = () => {
           {t('work.title')}
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -145,10 +145,11 @@ const SelectedWork = () => {
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2">
                 <h3 className="text-2xl font-heading font-bold text-foreground">
                   {project.title}
                 </h3>
+                <p className="text-sm text-muted-foreground px-4 text-center">Click to view gallery</p>
               </div>
             </motion.div>
           ))}

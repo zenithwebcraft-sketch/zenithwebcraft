@@ -13,14 +13,14 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0">
         <img 
           src={heroBg} 
           alt="Abstract elegant background" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/70 backdrop-blur-[2px]" />
       </div>
 
       {/* Content */}
